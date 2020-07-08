@@ -1,0 +1,32 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  padding: 30px;
+}
+body {
+  background-color: rgb(24, 26, 27);
+  color: palegoldenrod;
+}
+
+.row {
+  display: flex;
+  margin: 20px 0px;
+}
+
+.header-item {
+  border-bottom: 1px solid #e2aaee;
+  padding: 10px;
+  flex: 1;
+  margin: 0 10px;
+}
+
+.row-item {
+  flex: 1;
+  margin: 0 10px;
+}
+
+.row-item-with-task {
+  border: 1px solid palegoldenrod;
+  padding: 10px 0px;
+  border-radius: 10px;
+}
