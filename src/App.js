@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import "./styles.css";
+import { Modal } from "./modal/modal";
 
 export default function App() {
+  const [modalVisible, setModal] = useState();
   const days = [
     "Sunday",
     "Monday",
@@ -38,6 +40,8 @@ export default function App() {
   };
   return (
     <div className="App">
+      <button onClick={() => setModal(true)}>add new task</button>
+      {modalVisible && <Modal onClose={() => setModal()} />}
       <div className="header row">
         {days.map(day => (
           <div className="header-item">{day}</div>
