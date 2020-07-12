@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import "./styles.css";
 import { Modal } from "./modal/modal";
-import {days as dayKeys, fullDays, defaultTasks} from './helper.js';
+import {days as dayKeys, fullDays} from './helper.js';
 import TaskCard from "./task-card.component";
+import useGetTasks from "./use-get-tasks";
 
 export default function App() {
   const [modalVisible, setModal] = useState();
-  const [tasks, setTasks] = useState(defaultTasks);
+  const [tasks, setTasks] = useState([]);
+
+  useGetTasks(setTasks)
 
   const toggleDone = (taskId, day) => {
     const taskToChange = tasks.find(t => t.id === taskId)
@@ -19,7 +22,7 @@ export default function App() {
     const all = task.days?.[0] === "all";
     return dayKeys.map(dk => {
       return task.days.some(d => d.day.includes(dk)) || all ? (
-        <TaskCard dk={dk} task={task} toggleDone={toggleDone}/>
+        <TaskCard key={dk} task={task} toggleDone={toggleDone}/>
       ) : (
         <div key={dk} className="row-item" />
       );
@@ -43,7 +46,7 @@ export default function App() {
         ))}
       </div>
       {tasks.map(task => (
-        <div key={task.id} className="row">
+        <div key={task._id} className="row">
           {getTaskColumns(task)}
         </div>
       ))}
