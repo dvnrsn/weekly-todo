@@ -1,2 +1,3 @@
 # weekly-todo
-Created with CodeSandbox
+
+A simple todo app with a weekly view of tasks for accountability

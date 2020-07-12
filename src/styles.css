@@ -3,9 +3,17 @@
   text-align: center;
   padding: 30px;
 }
-body {
+
+html, body {
   background-color: rgb(24, 26, 27);
   color: palegoldenrod;
+  margin: 0;
+  height: 100%;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
 }
 
 .row {
