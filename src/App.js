@@ -22,7 +22,7 @@ export default function App() {
     const all = task.days?.[0] === "all";
     return dayKeys.map(dk => {
       return task.days.some(d => d.day.includes(dk)) || all ? (
-        <TaskCard key={dk} task={task} toggleDone={toggleDone}/>
+        <TaskCard key={dk} dk={dk} task={task} toggleDone={toggleDone}/>
       ) : (
         <div key={dk} className="row-item" />
       );
