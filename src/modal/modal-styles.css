@@ -13,10 +13,9 @@
 
 .modal-content {
   background-color: #242f34;
-  box-shadow: inset 0px 0px 40px 40px #dba632;
   margin: auto;
   padding: 20px;
-  width: 60%;
+  width: 500px;
   border-radius: 15px;
   position: relative;
 }
@@ -65,4 +64,15 @@ button {
 
 input[type="checkbox"] {
   cursor: pointer;
+}
+
+.days, .days > * {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+}
+
+.days > * {
+  margin: 0px 4px;
 }
