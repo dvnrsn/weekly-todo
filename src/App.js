@@ -3,13 +3,15 @@ import "./styles.css";
 import { Modal } from "./modal/modal";
 import {days as dayKeys, fullDays} from './helper.js';
 import TaskCard from "./task-card.component";
-import useGetTasks from "./use-get-tasks";
+import {useGetTasks, useGetTaskDates} from './resource-hooks';
 
 export default function App() {
   const [modalVisible, setModal] = useState();
   const [tasks, setTasks] = useState([]);
+  const [taskDates, setTaskDates] = useState([])
 
   useGetTasks(setTasks)
+  useGetTaskDates(setTaskDates);
 
   const toggleDone = (taskId, day) => {
     const taskToChange = tasks.find(t => t.id === taskId)
@@ -19,6 +21,7 @@ export default function App() {
   }
 
   const getTaskColumns = task => {
+    return
     const all = task.days?.[0] === "all";
     return dayKeys.map(dk => {
       return task.days.some(d => d.day.includes(dk)) || all ? (
